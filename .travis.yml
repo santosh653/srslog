@@ -1,9 +1,20 @@
+arch:
+- amd64
+- ppc64le
 sudo: required
 dist: trusty
 group: edge
 language: go
 go:
 - 1.5
+- 1.13
+- 1.14
+- 1.15
+
+jobs:
+ exclude:
+  - arch: ppc64le
+    go: 1.5 
 before_install:
   - pip install --user codecov
 script:
